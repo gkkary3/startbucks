@@ -1,6 +1,9 @@
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
 
 searchEl.addEventListener('click', function() {
   searchInputEl.focus();
@@ -67,5 +70,16 @@ new Swiper('.promotion .swiper-container',{
   navigation: {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
+  }
+});
+
+promotionToggleBtn.addEventListener('click', function(){
+  isHidePromotion = !isHidePromotion
+  if(isHidePromotion){
+    // 숨김 처리!
+    promotionEl.classList.add('hide');
+  }else{
+    // 보임 처리!
+    promotionEl.classList.remove('hide');
   }
 });
