@@ -98,8 +98,8 @@ function floatingObject(selector, delay, size) {
     random(1.5, 2.5), // 애니메이션 동작 시간
     { // 옵션
       y: size,
-      repeat: -1,
-      yoyo: true,
+      repeat: -1, // 무한 반복
+      yoyo: true, // 되돌아오기 
       ease: Power1.easeInOut,
       delay: random(0, delay)
     }
