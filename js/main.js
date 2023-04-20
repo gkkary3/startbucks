@@ -3,6 +3,8 @@ const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
+const spyEls = document.querySelectorAll('section.scroll-spy')
+
 let isHidePromotion = false;
 
 searchEl.addEventListener('click', function() {
@@ -108,3 +110,15 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+
+
+spyEls.forEach(function(spyEl) {
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8
+    })
+    .setClassToggle()
+    .addTo();
+});
