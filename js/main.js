@@ -3,7 +3,8 @@ const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
-const spyEls = document.querySelectorAll('section.scroll-spy')
+const spyEls = document.querySelectorAll('section.scroll-spy');
+const thisYear = document.querySelector('.this-year');
 
 let isHidePromotion = false;
 
@@ -74,6 +75,18 @@ new Swiper('.promotion .swiper-container',{
     nextEl: '.promotion .swiper-next'
   }
 });
+new Swiper('.awards .swiper-container', {
+  autoplay:true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl:'.awards .swiper-prev',
+    nextEl:'.awards .swiper-next',
+  }
+});
+
+
 
 promotionToggleBtn.addEventListener('click', function(){
   isHidePromotion = !isHidePromotion
@@ -119,6 +132,9 @@ spyEls.forEach(function(spyEl) {
       triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
       triggerHook: .8
     })
-    .setClassToggle()
-    .addTo();
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
 });
+
+
+thisYear.textContent = new Date().getFullYear(); //2023
