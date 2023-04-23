@@ -29,10 +29,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="./css/main.css">
 
-  <!-- 애니메이션 효과 라이브러리-->
+  <!-- 애니메이션 효과 라이브러리(GSAP & ScrollToPlugin)-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
     integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"
+    integrity="sha512-WFeBxQtM/n6U8/Nd0Hz/Hq7n75NImbzM7Kc0y/4kE0kHnH1Be+nzm32RwbGoDsW1D9fjjPvI8LIWxLrZhxew/w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <!-- 스크롤 함수 호출 제어 라이브러리 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
@@ -674,10 +678,12 @@
       <img src="./images/starbucks_logo_only_text.png" alt="" class="logo" />
 
     </div>
-
   </footer>
 
 
+  <div id="to-top">
+    <div class="material-icons">arrow_upward</div>
+  </div>
 </body>
 
 </html>

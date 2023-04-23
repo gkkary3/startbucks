@@ -1,10 +1,13 @@
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+const fadeEls = document.querySelectorAll('.visual .fade-in');
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 const spyEls = document.querySelectorAll('section.scroll-spy');
 const thisYear = document.querySelector('.this-year');
+
 
 let isHidePromotion = false;
 
@@ -30,19 +33,34 @@ window.addEventListener('scroll', _.throttle(function() {
     gsap.to(badgeEl, .6, {
       opacity: 0,
       display: 'none'
-    })
+    });
+    // 버튼 보이기!
+    gsap.to(toTopEl, .2, {
+      x: 0
+    });
   }else{
     // 배지 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
-    })
+    });
+    // 버튼 숨기기!
+    gsap.to(toTopEl, .2, {
+      x: 100
+    });
   }
 }, 300));
 // _.throttle(함수, 시간)
 
 
-const fadeEls = document.querySelectorAll('.visual .fade-in');
+toTopEl.addEventListener('click', function() {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+});
+
+
+
 fadeEls.forEach(function(fadeEl, index) {
   // 애니메이션 메서드
   // gsap.to(요소, 지속시간, 옵션);
