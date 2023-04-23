@@ -155,4 +155,4 @@ spyEls.forEach(function(spyEl) {
 });
 
 
-thisYear.textContent = new Date().getFullYear(); //2023
+thisYear.textContent = new Date().getFullYear(); //2023ㅁㅁ
